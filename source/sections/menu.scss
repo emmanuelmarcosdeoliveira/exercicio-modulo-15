@@ -1,0 +1,14 @@
+@use "../config/cores.scss";
+@use '../config/reset.scss';
+
+ .menu {
+  display: flex;
+    }
+    .menu li {
+      font-weight: bold;
+      margin-left: 24px;
+      }
+      .menu li a {
+        color: cores.$corPrincipal;
+        text-decoration: none;
+      }

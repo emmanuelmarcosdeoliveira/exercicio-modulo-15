@@ -1,7 +1,3 @@
-$corPrincipal:#fafa ;
-$corTexto: #121212;
-
-body {
-  background-color: $corPrincipal;
-  color: $corTexto;
-}
+@use './sections/header.scss';
+@use './sections/menu.scss';
+@use './sections/produtos.scss';
