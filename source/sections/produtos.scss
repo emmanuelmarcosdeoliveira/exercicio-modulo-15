@@ -1,9 +1,13 @@
-@use "../config/cores.scss";
 @use "../config/variaveis.scss";
-@use '../config/reset.scss';
+@use "../config/reset.scss";
+@use "sass:math";
+
+@function espacosParaEm($alvoEmPixel, $contextoEmPixel: 16px) {
+  @return math.div($alvoEmPixel, $contextoEmPixel) + em;
+}
 
 .products {
-  margin-top: 40px;
+  margin-top: espacosParaEm(40px);
   display: grid;
   grid-template-columns: repeat(3, 32.66%);
   column-gap: 1%;
@@ -11,34 +15,37 @@
   width: 100%;
   .product-item img {
     width: 100%;
-    border-radius: 16px;
+    border-radius: espacosParaEm(16px);
   }
   .product-button {
     display: block;
-    background-color: cores.$cordoBotao;
-    color: cores.$corPrincipal;
+    background-color: variaveis.$cordoBotao;
+    color: variaveis.$corPrincipal;
     text-align: center;
-    padding: 8px 0;
-    border-radius: 8px;
-    margin-top: 8px;
+    padding: espacosParaEm(8px) 0;
+    border-radius: espacosParaEm(8px);
+    margin-top: espacosParaEm(8px);
     text-decoration: none;
-  }
-  .product-button:hover {
-    background-color: cores.$botaoHover;
-  }
-}  
-
-@media screen and (max-width: 1023px) {
-    .products {
-      grid-template-columns: repeat(2, 48.5%);
-      column-gap: 3%;
+    &:hover {
+      background-color: lighten(variaveis.$botaoHover, 1%);
+    }
   }
 }
-@media screen and (max-width: 767px) {
-  .products {
-      display: block;
+
+@media screen and (max-width: variaveis.$tablet) {
+  .container {
+    max-width: 80%;
   }
-  .product-item  {
-      margin-bottom: 32px;
+  .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+@media screen and (max-width: variaveis.$mobile) {
+  .products {
+    display: block;
+  }
+  .product-item {
+    margin-bottom: 32px;
   }
 }

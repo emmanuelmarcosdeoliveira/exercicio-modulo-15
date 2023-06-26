@@ -1,26 +1,36 @@
-@use './cores.scss';
 @use './variaveis.scss';
+@use 'sass:math';
+
+@function espacosParaEm($alvoEmPixel, $contextoEmPixel: 16px){
+  @return math.div($alvoEmPixel , $contextoEmPixel)+em;
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: variaveis.$fontePrincipal;
 }
+
 section {
-  padding: 56px 0;
+  padding: espacosParaEm(56px) 0;
 }
+
 body {
-  background-color: cores.$backgroundBody;
+  background-color: variaveis.$backgroundBody;
 }
+
 li {
   list-style: none;
 }
+
 .container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
  }
-@media screen and (max-width: 1023px) {
+
+ @media screen and (max-width: variaveis.$mobile) {
   .container {
       max-width: 80%;
   }

@@ -1,4 +1,4 @@
-@use "../config/cores.scss";
+@use "../config/variaveis.scss";
 @use '../config/reset.scss';
 
  .menu {
@@ -9,6 +9,6 @@
       margin-left: 24px;
       }
       .menu li a {
-        color: cores.$corPrincipal;
+        color: variaveis.$corPrincipal;
         text-decoration: none;
       }

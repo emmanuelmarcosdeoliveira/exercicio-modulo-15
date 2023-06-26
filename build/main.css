@@ -6,7 +6,7 @@
 }
 
 section {
-  padding: 56px 0;
+  padding: 3.5em 0;
 }
 
 body {
@@ -23,7 +23,7 @@ li {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   .container {
     max-width: 80%;
   }
@@ -39,7 +39,7 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0px;
+  padding: 1em 0px;
 }
 
 .menu {
@@ -57,7 +57,7 @@ header .container {
 }
 
 .products {
-  margin-top: 40px;
+  margin-top: 2.5em;
   display: grid;
   grid-template-columns: repeat(3, 32.66%);
   column-gap: 1%;
@@ -66,23 +66,26 @@ header .container {
 }
 .products .product-item img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 1em;
 }
 .products .product-button {
   display: block;
   background-color: #44bd32;
   color: #fff;
   text-align: center;
-  padding: 8px 0;
-  border-radius: 8px;
-  margin-top: 8px;
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+  margin-top: 0.5em;
   text-decoration: none;
 }
 .products .product-button:hover {
-  background-color: #4cd137;
+  background-color: #50d23b;
 }
 
 @media screen and (max-width: 1023px) {
+  .container {
+    max-width: 80%;
+  }
   .products {
     grid-template-columns: repeat(2, 48.5%);
     column-gap: 3%;
